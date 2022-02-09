@@ -1,0 +1,5 @@
+#!/bin/bash
+start = $1
+end = $2
+
+git diff $1 $2

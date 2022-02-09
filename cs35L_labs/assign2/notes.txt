@@ -1,0 +1,25 @@
+Assignment 2 CS35L
+405597243
+
+2.1
+
+1.(expt 3 (expt 4 5 ))
+
+2.(truncate (log (expt 3 (expt 4 5)) 2))
+
+3. C-h k C-h k
+   C-h k prompts for a certain key, mouse click or menu item that you don't know what it does, pressing again tells you what it does. So entering C-h k twice explains what C-h k does.
+
+4. Delete all spaces and tabs around point, leaving one space (or N spaces).
+   If N is negative, delete newlines as well, leaving -N spaces.
+5. (Just-one-space)
+
+Python scripting
+
+I get list index out of range since the file is empty
+
+Python 3 invoking brings up a syntax error since they are different versions and have different syntax
+
+When my shut.py is invoked with python2, it fails since I have new version 3.10 and it doesn't work with python 2
+
+I used structural pattern matching for the -I since it can match if there are two chars that are ints

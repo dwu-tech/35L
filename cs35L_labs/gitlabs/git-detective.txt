@@ -1,0 +1,21 @@
+I first started with the tag, 2.33.1. I ran git log and searched for the tag which gave the commit id
+af6d1d602a. This let me know that this was the commit id, I could run git log on that to find the author.
+
+The author and date where
+Author: Junio C Hamano <gitster@pobox.com>
+Date:   Tue Oct 12 13:51:59 2021 -0700
+
+Now that I have that, I ran git format-patch, this resulted in around 600 lines.
+I ran it again but piped it into grep diff to find occurences of diff.
+I saw one of the files mentioned a segfault.
+
+The final command I ran was git format-patch | grep segfault
+this results in one file,
+0572-mergetools-xxdiff-prevent-segfaults-from-stopping-di.patch
+
+I concluded that this was the patch that fixed the issue with git diff --relative as
+they mentioned the error was a segfault, and the name of the patch involves preventing segfaults
+
+
+After examining that patch file, I concluded that both David Aguilar and June C Hamano 
+Signed off on the patch 572.

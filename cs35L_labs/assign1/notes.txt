@@ -1,0 +1,110 @@
+1. /usr/local/cs/bin/mv
+   Commmand - which mv
+
+   /usr/bin/sh
+   Command - which sh
+
+2. cd /usr/bin
+   ls ?r
+   ar - creates/extracts from archives
+   pr - prepares file for printing
+   tr - command to translate and delete characters
+
+3. /usr/bin/emacs-26.1
+
+Commands:
+  ls -l emacs
+  cd /etc/alternatives
+  ls-l emacs
+
+4. 
+   /usr/bin/gcc -v
+   gcc version 8.4.1
+
+   gcc -v
+   gcc version 11.2.0 
+ 
+   gcc and /usr/bin/gcc are from two diff libraries so they have different versions
+
+5. 
+   u+ sx gives permission to add executable access, and lets user set a specific ID
+   o-w removes write permissions from other groups
+
+6.  ls -lR /usr/bin | grep ^l
+
+ /usr/local/cs
+/usr/local/cs/.del
+/usr/local/cs/.del/automake-1.16.4
+/usr/local/cs/bin
+/usr/local/cs/gdb-11.1
+/usr/local/cs/gdb-11.1/include
+/usr/local/cs/gdb-11.1/include/sim
+/usr/local/cs/gdb-11.1/include/gdb
+/usr/local/cs/gdb-11.1/lib
+/usr/local/cs/gdb-11.1/bin
+/usr/local/cs/gdb-11.1/share
+/usr/local/cs/gdb-11.1/share/info
+/usr/local/cs/gdb-11.1/share/man
+/usr/local/cs/gdb-11.1/share/man/man5
+/usr/local/cs/gdb-11.1/share/man/man1
+/usr/local/cs/gdb-11.1/share/gdb
+/usr/local/cs/gdb-11.1/share/gdb/system-gdbinit
+/usr/local/cs/gdb-11.1/share/gdb/syscalls
+/usr/local/cs/automake-1.16.5
+/usr/local/cs/automake-1.16.5/share
+/usr/local/cs/automake-1.16.5/share/doc
+/usr/local/cs/automake-1.16.5/share/doc/automake
+/usr/local/cs/automake-1.16.5/share/automake-1.16
+/usr/local/cs/automake-1.16.5/share/automake-1.16/am
+/usr/local/cs/automake-1.16.5/share/automake-1.16/Automake
+/usr/local/cs/automake-1.16.5/share/aclocal-1.16
+/usr/local/cs/automake-1.16.5/share/aclocal-1.16/internal
+/usr/local/cs/automake-1.16.5/share/aclocal
+/usr/local/cs/automake-1.16.5/share/info
+/usr/local/cs/automake-1.16.5/share/man
+/usr/local/cs/automake-1.16.5/share/man/man1
+/usr/local/cs/automake-1.16.5/bin
+/usr/local/cs/share/info
+/usr/local/cs/share/man/man1
+/usr/local/cs/share/man/man5
+/usr/local/cs/src/automake
+/usr/local/cs/src/automake/RCS
+/usr/local/cs/src/gdb
+/usr/local/cs/src/gdb/RCS
+
+7. ls -lR /usr/bin | grep ^l | wc
+   249
+
+8. ls-lt
+   libcrypt.so.1.1.0
+
+9. transpose-chars               C-t
+   Interchange characters around point, moving forward one character.
+transpose-lines               C-x C-t
+   Exchange current line and previous line, leaving point after both.
+transpose-paragraphs          M-x ... RET
+   Interchange the current paragraph with the next one.
+transpose-regions             M-x ... RET
+   Transpose region STARTR1 to ENDR1 with STARTR2 to ENDR2.
+transpose-sentences           M-x ... RET
+   Interchange the current sentence with the next one.
+transpose-sexps               C-M-t
+   Like \[transpose-chars] (`transpose-chars'), but applies to sexps.
+transpose-words               M-t
+   Interchange words around point, leaving point at end of them.
+
+C-h a transpose
+
+10. Yank pastes the last killed text C-y
+
+11. Dired makes an emacs buffer to show all of the links, ls-l does not show every single link there is
+
+12. 3 processes
+    root        1103       1  0 Aug31 ?        00:04:33 /opt/fireeye/bin/xagt -M DAEMON
+root        7355    1103 11 Aug31 ?        3-21:19:21 /opt/fireeye/bin/xagt --mode Eventor --iofd 3 --cmname 12 --log INFO --logfd 4
+root        7357    1103  0 Aug31 ?        00:14:38 /opt/fireeye/bin/xagt --mode ProcessTracker --iofd 3 --cmname 12 --log INFO --logfd 4
+
+ 11.4%
+
+
+

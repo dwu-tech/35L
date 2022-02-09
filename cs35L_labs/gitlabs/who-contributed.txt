@@ -1,0 +1,11 @@
+First use the command git grep "Even newspaper reports present contradictory information"
+This gives you the file northamerica
+
+You can then use the commmand git blame northamerica to see the the authors and dates of each contribution
+
+I scrolled through the contributions until I found "Even newspaper reports present contradictory information"
+
+Paul Eggert        2013-09-02 08:09:06 -0700  896
+
+This is the information that shows,
+The text was introduced by Paul Eggert on 09/02/2013 at 8:09:06 UTC with -700 offset

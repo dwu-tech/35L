@@ -1,0 +1,50 @@
+From 571f4348dd845fd4eccc6b19d93a7b422ed1a466 Mon Sep 17 00:00:00 2001
+From: David Aguilar <davvid@gmail.com>
+Date: Tue, 12 Oct 2021 19:45:39 -0700
+Subject: [PATCH 572/650] mergetools/xxdiff: prevent segfaults from stopping
+ difftool
+
+Users often use "git difftool HEAD^" to review their work, and have
+"mergetool.prompt" set to false so that difftool does not prompt them
+before diffing each file.
+
+This is very convenient because users can see all their diffs by
+reviewing the xxdiff windows one at a time.
+
+A problem occurs when xxdiff encounters some binary files.
+It can segfault and return exit code 128, which is special-cased
+by git-difftool-helper as being an extraordinary situation that
+aborts the process.
+
+Suppress the exit code from xxdiff in its diff_cmd() implementation
+when we see exit code 128 so that the GIT_EXTERNAL_DIFF loop continues
+on uninterrupted to the next file rather than aborting when it
+encounters the first binary file.
+
+Signed-off-by: David Aguilar <davvid@gmail.com>
+Signed-off-by: Junio C Hamano <gitster@pobox.com>
+---
+ mergetools/xxdiff | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/mergetools/xxdiff b/mergetools/xxdiff
+index ce5b8e9f29..d5ce467995 100644
+--- a/mergetools/xxdiff
++++ b/mergetools/xxdiff
+@@ -3,6 +3,13 @@ diff_cmd () {
+ 		-R 'Accel.Search: "Ctrl+F"' \
+ 		-R 'Accel.SearchForward: "Ctrl+G"' \
+ 		"$LOCAL" "$REMOTE"
++
++	# xxdiff can segfault on binary files which are often uninteresting.
++	# Do not allow segfaults to stop us from continuing on to the next file.
++	if test $? = 128
++	then
++		return 1
++	fi
+ }
+ 
+ merge_cmd () {
+-- 
+2.27.0
+

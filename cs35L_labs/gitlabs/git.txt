@@ -1,0 +1,8 @@
+The main difference is that eggert's directory has more branches when compared to the one that I cloned.
+Even though we both point to master, eggert has
+  next
+  seen
+  todo
+as branches below and maint above.
+git clone for me only takes the local branch for master which is why when you run git branch -r on eggert and
+my own directories, the show the same result.
